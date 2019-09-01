@@ -50,8 +50,6 @@ class TodoListViewController: UITableViewController {
         
         let item = itemArray[indexPath.row]
         
-//        cell.textLabel?.text = itemArray[indexPath.row].title
-        
         cell.textLabel?.text = item.title
         
         //Ternary Operator ==>
@@ -59,36 +57,14 @@ class TodoListViewController: UITableViewController {
         
         cell.accessoryType = item.done ? .checkmark : .none
         
-//        if item.done == true {
-//            cell.accessoryType = .checkmark
-//        } else {
-//            cell.accessoryType = .none
-//        }
-        
         return cell
     }
     
     //    Mark - TableView Delegate Methods
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        print(itemArray[indexPath.row])
         
-        //third iteration
         itemArray[indexPath.row].done = !itemArray[indexPath.row].done
-        
-    //second iteration
-//        if itemArray[indexPath.row].done == false {
-//            itemArray[indexPath.row].done = true
-//        } else {
-//            itemArray[indexPath.row].done = false
-//        }
-        
-   // first iteration
-//        if tableView.cellForRow(at: indexPath)?.accessoryType == .checkmark {
-//            tableView.cellForRow(at: indexPath)?.accessoryType = .none
-//        } else {
-//            tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
-//        }
         
         tableView.reloadData()
         
